@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary1.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:ClassLibrary1.Fakes.ShimClass1">
+            <summary>Shim type of ClassLibrary1.Class1</summary>
+        </member>
+        <member name="M:ClassLibrary1.Fakes.ShimClass1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:ClassLibrary1.Fakes.ShimClass1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ClassLibrary1.Fakes.ShimClass1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ClassLibrary1.Fakes.ShimClass1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ClassLibrary1.Fakes.ShimClass1.GetAnswer">
+            <summary>Sets the shim of Class1.GetAnswer()</summary>
+        </member>
+    </members>
+</doc>

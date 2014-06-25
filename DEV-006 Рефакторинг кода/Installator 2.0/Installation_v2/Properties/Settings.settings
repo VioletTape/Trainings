@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Installation_v2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ApplicationName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Гранде Cons</Value>
+    </Setting>
+    <Setting Name="ExecutableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Grande.exe</Value>
+    </Setting>
+    <Setting Name="ShortcutName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Grande_CONS.lnk</Value>
+    </Setting>
+    <Setting Name="ReleaseCompany" Type="System.String" Scope="User">
+      <Value Profile="(Default)">WBR_Violet_Tape</Value>
+    </Setting>
+    <Setting Name="TargetCompany" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Гранде</Value>
+    </Setting>
+    <Setting Name="InstallPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Wbr\GrandeCons</Value>
+    </Setting>
+    <Setting Name="MinimumVersionToUpdate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.100601.01</Value>
+    </Setting>
+    <Setting Name="pathToCE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</Value>
+    </Setting>
+    <Setting Name="pathToVsvars" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\vsvars32.bat</Value>
+    </Setting>
+    <Setting Name="pathToCsc" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Windows\Microsoft.NET\Framework\v3.5\Csc.exe</Value>
+    </Setting>
+    <Setting Name="pathToResult" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Project\experiment</Value>
+    </Setting>
+    <Setting Name="pathToAppl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Project\GrandeX\Main\Grande\bin\Debug</Value>
+    </Setting>
+    <Setting Name="LightUpdate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ApplicationVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.100709.01</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

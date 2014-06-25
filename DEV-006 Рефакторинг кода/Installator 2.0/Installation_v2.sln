@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{24BE9B87-3197-4B05-88F4-F588D3B7BB6D}"
+	ProjectSection(SolutionItems) = preProject
+		Installation_v2.vsmdi = Installation_v2.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		WithoutCoverage.testrunconfig = WithoutCoverage.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Installation_v2", "Installation_v2\Installation_v2.csproj", "{AB16A89F-30EB-4D07-A45A-850F6A671B4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Debug|x86.ActiveCfg = Debug|x86
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Debug|x86.Build.0 = Debug|x86
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Release|x86.ActiveCfg = Release|x86
+		{AB16A89F-30EB-4D07-A45A-850F6A671B4C}.Release|x86.Build.0 = Release|x86
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Debug|x86.ActiveCfg = Debug|x86
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Debug|x86.Build.0 = Debug|x86
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Release|x86.ActiveCfg = Release|x86
+		{6584EE56-BE0F-4503-91B9-D0AADCC25B2A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Installation_v2.vsmdi
+	EndGlobalSection
+EndGlobal
