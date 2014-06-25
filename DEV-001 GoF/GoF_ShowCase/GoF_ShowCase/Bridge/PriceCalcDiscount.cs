@@ -7,8 +7,8 @@ namespace GoF_ShowCase.Bridge {
 
         private readonly Dictionary<uint, ItemInCart> cart = new Dictionary<uint, ItemInCart>();
 
-        public PriceCalcDiscount(DeliveryCompany company) {
-            impl = PriceCalcImplFabric.GetPriceCalcImpl(company);
+        public PriceCalcDiscount(IPriceCalcImpl impl) {
+            this.impl = impl;
         }
 
         public virtual void AddItem(uint itemId, uint itemQuantity) {

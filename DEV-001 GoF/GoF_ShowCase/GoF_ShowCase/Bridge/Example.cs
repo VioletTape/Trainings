@@ -19,11 +19,15 @@ namespace GoF_ShowCase.Bridge {
         }
 
         public void ExecuteDemo() {
-            IPriceCalc calc1 = new PriceCalcBasic(DeliveryCompany.Self);
+            var calcImplementation = PriceCalcImplFabric.GetPriceCalcImpl(DeliveryCompany.Self);
+
+            IPriceCalc calc1 = new PriceCalcBasic(calcImplementation);
             var price1 = GetCartTotal(calc1);
             Console.WriteLine(price1);
 
-            IPriceCalc calc2 = new PriceCalcDiscount(DeliveryCompany.CompanyA);
+
+            var priceCalcImpl = PriceCalcImplFabric.GetPriceCalcImpl(DeliveryCompany.CompanyA);
+            IPriceCalc calc2 = new PriceCalcDiscount(priceCalcImpl);
             var price2 = GetCartTotal(calc2);
             Console.WriteLine(price2);
         }
