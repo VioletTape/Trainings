@@ -10,7 +10,11 @@
         }
     }
 
-    internal class NodeFactory {
+    /// <summary>
+    /// В данном случае реализация ближе к классической фабрике
+    /// т.к. есть дополнительная ответственность на классе
+    /// </summary>
+    internal class NodeFactory : INodeFactory {
         public bool StringNodeDecode { get; set; }
         public bool RemoveEscapeCharacters { get; set; }
 
@@ -37,9 +41,9 @@
     }
 
     internal class Parser {
-        private readonly NodeFactory factory;
+        private readonly INodeFactory factory;
 
-        public Parser(NodeFactory factory) {
+        public Parser(INodeFactory factory) {
             this.factory = factory;
         }
 
