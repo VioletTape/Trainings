@@ -1,5 +1,5 @@
 ﻿using System;
-using GoF_TryOut.Builder.Refactored;
+using GoF_TryOut.State.Refactored;
 
 namespace TestConsole {
     internal class Program {
@@ -8,7 +8,7 @@ namespace TestConsole {
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args) {
-            new BuilderExampleRefactored();
+            new Example();
 
             Console.ReadLine();
         }

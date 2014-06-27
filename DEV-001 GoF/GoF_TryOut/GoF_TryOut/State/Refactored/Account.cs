@@ -15,8 +15,12 @@
             State.Deposit(amount);
         }
 
-        public string GetState() {
-            return "";
+        public decimal GetBalance() {
+            return State.GetBalance();
+        }
+
+        public string GetStateName() {
+            return State.GetStateName();
         }
     }
 }

@@ -24,6 +24,11 @@ namespace GoF_TryOut.State.Straight {
             cardType = cardType;
         }
 
+        public string GetStateName()
+        {
+            return cardType.ToString();
+        }
+
         public decimal GetBalance() {
             return balance;
         }
