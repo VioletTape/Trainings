@@ -49,9 +49,4 @@ namespace GoF_TryOut.State.Refactored {
         }
     }
 
-    public enum CardType {
-        Standard,
-        Gold,
-        Platinum
-    }
 }
