@@ -109,6 +109,9 @@
     <Compile Include="Memento\StraightCode\Contact.cs" />
     <Compile Include="Memento\StraightCode\MementoExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prototype\Refactored\Client.cs" />
+    <Compile Include="Prototype\Straight\Aircraft.cs" />
+    <Compile Include="Prototype\Straight\Client.cs" />
     <Compile Include="State\Refactored\Account.cs" />
     <Compile Include="State\Refactored\CardState.cs" />
     <Compile Include="State\Refactored\Example.cs" />
