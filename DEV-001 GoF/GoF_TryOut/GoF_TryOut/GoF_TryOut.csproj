@@ -67,11 +67,15 @@
     <Compile Include="Adapter\StraightCode\CustomerRepo.cs" />
     <Compile Include="Adapter\StraightCode\Domain.cs" />
     <Compile Include="Adapter\StraightCode\OrderRepo.cs" />
+    <Compile Include="Bridge\Refactored\Client.cs" />
+    <Compile Include="Bridge\Straight\Client.cs" />
     <Compile Include="Builder\Refactored\BuilderExample.cs" />
     <Compile Include="Builder\Refactored\CarBuilder.cs" />
     <Compile Include="Builder\Refactored\CarParts.cs" />
     <Compile Include="Builder\Straight\CarParts.cs" />
     <Compile Include="Builder\Straight\BuilderExample.cs" />
+    <Compile Include="ChainOfResposibility\Refactored\Client.cs" />
+    <Compile Include="ChainOfResposibility\Straight\Client.cs" />
     <Compile Include="Commands\Refactored\Channel.cs" />
     <Compile Include="Commands\Refactored\Client.cs" />
     <Compile Include="Commands\Refactored\Command.cs" />
@@ -92,16 +96,22 @@
     <Compile Include="Composite\Refactored\CompositeExampleRefactored.cs" />
     <Compile Include="Composite\Straight\CarParts.cs" />
     <Compile Include="Composite\Straight\CompositeExample.cs" />
+    <Compile Include="Decorator\Refactored\Client.cs" />
     <Compile Include="Decorator\Straight\Class1.cs" />
     <Compile Include="FactoryMethod\Refactored\ClientRefactored_v2.cs" />
     <Compile Include="FactoryMethod\Refactored\INodeFactory.cs" />
     <Compile Include="FactoryMethod\StraightCode\Client.cs" />
     <Compile Include="FactoryMethod\Refactored\ClientRefactored.cs" />
+    <Compile Include="FactoryMethod\StraightCode\Node.cs" />
+    <Compile Include="FactoryMethod\StraightCode\Parser.cs" />
+    <Compile Include="FactoryMethod\StraightCode\StringParser.cs" />
     <Compile Include="Interpreter\Refactored\Customer.cs" />
     <Compile Include="Interpreter\Refactored\Repository.cs" />
     <Compile Include="Interpreter\Refactored\Specs.cs" />
     <Compile Include="Interpreter\StraightCode\Customer.cs" />
     <Compile Include="Interpreter\StraightCode\Repository.cs" />
+    <Compile Include="Mediator\Refactored\Client.cs" />
+    <Compile Include="Mediator\Straight\Client.cs" />
     <Compile Include="Memento\Refactored\Contact.cs" />
     <Compile Include="Memento\Refactored\ContactService.cs" />
     <Compile Include="Memento\Refactored\MementoExampleRefactored.cs" />
@@ -112,6 +122,8 @@
     <Compile Include="Prototype\Refactored\Client.cs" />
     <Compile Include="Prototype\Straight\Aircraft.cs" />
     <Compile Include="Prototype\Straight\Client.cs" />
+    <Compile Include="Proxy\Refactored\Client.cs" />
+    <Compile Include="Proxy\Straight\Client.cs" />
     <Compile Include="State\Refactored\Account.cs" />
     <Compile Include="State\Refactored\CardState.cs" />
     <Compile Include="State\Refactored\Example.cs" />
@@ -130,6 +142,8 @@
     <Compile Include="Strategy\StraightCode\ShippingInfo.cs" />
     <Compile Include="Strategy\StraightCode\ClientCode.cs" />
     <Compile Include="Strategy\StraightCode\State.cs" />
+    <Compile Include="TemplateMethod\Refactored\Client.cs" />
+    <Compile Include="TemplateMethod\Straight\Client.cs" />
     <Compile Include="Visitor\Refactored\CarParts.cs" />
     <Compile Include="Visitor\Refactored\IVisitor.cs" />
     <Compile Include="Visitor\Refactored\VisitorExampleRefactored.cs" />
@@ -139,8 +153,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Decorator\Refactored\" />
+    <Content Include="Flyweight\Refactored\ReadMe.txt" />
+    <Content Include="Flyweight\Straight\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
