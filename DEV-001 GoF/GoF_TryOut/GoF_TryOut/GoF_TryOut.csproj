@@ -72,7 +72,11 @@
     <Compile Include="Adapter\StraightCode\Domain.cs" />
     <Compile Include="Adapter\StraightCode\OrderRepo.cs" />
     <Compile Include="Bridge\Refactored\Client.cs" />
+    <Compile Include="Bridge\Refactored\Message.cs" />
+    <Compile Include="Bridge\Refactored\MessageSender.cs" />
     <Compile Include="Bridge\Straight\Client.cs" />
+    <Compile Include="Bridge\Straight\Message.cs" />
+    <Compile Include="Bridge\Straight\MessageSender.cs" />
     <Compile Include="Builder\Refactored\BuilderExample.cs" />
     <Compile Include="Builder\Refactored\CarBuilder.cs" />
     <Compile Include="Builder\Refactored\CarParts.cs" />
