@@ -82,6 +82,8 @@
     <Compile Include="Builder\Refactored\CarParts.cs" />
     <Compile Include="Builder\Straight\CarParts.cs" />
     <Compile Include="Builder\Straight\BuilderExample.cs" />
+    <Compile Include="ChainOfResposibility\Refactored\Address.cs" />
+    <Compile Include="ChainOfResposibility\Refactored\IDeliveryService.cs" />
     <Compile Include="ChainOfResposibility\Refactored\Client.cs" />
     <Compile Include="ChainOfResposibility\Straight\Address.cs" />
     <Compile Include="ChainOfResposibility\Straight\Client.cs" />
