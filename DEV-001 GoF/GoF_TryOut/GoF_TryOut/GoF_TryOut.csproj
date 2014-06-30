@@ -85,6 +85,7 @@
     <Compile Include="ChainOfResposibility\Refactored\Client.cs" />
     <Compile Include="ChainOfResposibility\Straight\Address.cs" />
     <Compile Include="ChainOfResposibility\Straight\Client.cs" />
+    <Compile Include="ChainOfResposibility\Straight\IDeliveryService.cs" />
     <Compile Include="Commands\Refactored\Channel.cs" />
     <Compile Include="Commands\Refactored\Client.cs" />
     <Compile Include="Commands\Refactored\Command.cs" />
