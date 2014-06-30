@@ -83,6 +83,7 @@
     <Compile Include="Builder\Straight\CarParts.cs" />
     <Compile Include="Builder\Straight\BuilderExample.cs" />
     <Compile Include="ChainOfResposibility\Refactored\Client.cs" />
+    <Compile Include="ChainOfResposibility\Straight\Address.cs" />
     <Compile Include="ChainOfResposibility\Straight\Client.cs" />
     <Compile Include="Commands\Refactored\Channel.cs" />
     <Compile Include="Commands\Refactored\Client.cs" />
