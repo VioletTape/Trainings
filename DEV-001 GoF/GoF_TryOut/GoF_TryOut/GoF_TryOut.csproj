@@ -132,7 +132,10 @@
     <Compile Include="Interpreter\StraightCode\Customer.cs" />
     <Compile Include="Interpreter\StraightCode\Repository.cs" />
     <Compile Include="Mediator\Refactored\Client.cs" />
+    <Compile Include="Mediator\Straight\Area.cs" />
     <Compile Include="Mediator\Straight\Client.cs" />
+    <Compile Include="Mediator\Straight\Example.cs" />
+    <Compile Include="Mediator\Straight\Plane.cs" />
     <Compile Include="Memento\Refactored\Contact.cs" />
     <Compile Include="Memento\Refactored\ContactService.cs" />
     <Compile Include="Memento\Refactored\MementoExampleRefactored.cs" />
