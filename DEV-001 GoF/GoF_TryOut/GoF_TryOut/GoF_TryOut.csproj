@@ -112,8 +112,13 @@
     <Compile Include="Composite\Refactored\CompositeExampleRefactored.cs" />
     <Compile Include="Composite\Straight\CarParts.cs" />
     <Compile Include="Composite\Straight\CompositeExample.cs" />
+    <Compile Include="Decorator\Refactored\IDeliveryService.cs" />
     <Compile Include="Decorator\Refactored\Client.cs" />
-    <Compile Include="Decorator\Straight\Class1.cs" />
+    <Compile Include="Decorator\Refactored\Decorators.cs" />
+    <Compile Include="Decorator\Refactored\Infrastructure.cs" />
+    <Compile Include="Decorator\Straight\DeliveryService.cs" />
+    <Compile Include="Decorator\Straight\Client.cs" />
+    <Compile Include="Decorator\Straight\Infrastructure.cs" />
     <Compile Include="FactoryMethod\Refactored\ClientRefactored_v2.cs" />
     <Compile Include="FactoryMethod\Refactored\INodeFactory.cs" />
     <Compile Include="FactoryMethod\StraightCode\Client.cs" />
