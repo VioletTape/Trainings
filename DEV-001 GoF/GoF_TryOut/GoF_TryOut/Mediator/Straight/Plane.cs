@@ -20,12 +20,12 @@ namespace GoF_TryOut.Mediator.Straight {
             if (firstEchelon.Count <= 5) {
                 Echelon = Echelon.First;
                 foreach (var plane in firstEchelon) {
-                    plane.Notify("new plane in echelon");
+                    plane.Notify("new plane {0} in echelon", Id);
                 }
             }
         }
 
-        private void Notify(string message) {}
+        private void Notify(string message, params object[] obj) {}
 
         public void MoveToSecondEchelon() {
             if (Echelon == Echelon.Second) {
@@ -36,7 +36,7 @@ namespace GoF_TryOut.Mediator.Straight {
             if (firstEchelon.Count <= 5) {
                 Echelon = Echelon.Second;
                 foreach (var plane in firstEchelon) {
-                    plane.Notify("new plane in echelon");
+                    plane.Notify("new plane {0} in echelon", Id);
                 }
             }
         }
@@ -50,7 +50,7 @@ namespace GoF_TryOut.Mediator.Straight {
             if (firstEchelon.Count <= 5) {
                 Echelon = Echelon.Third;
                 foreach (var plane in firstEchelon) {
-                    plane.Notify("new plane in echelon");
+                    plane.Notify("new plane {0} in echelon", Id);
                 }
             }
         }
@@ -70,14 +70,14 @@ namespace GoF_TryOut.Mediator.Straight {
             }
 
             foreach (var plane in landing) {
-                plane.Notify("landing in queue");
+                plane.Notify("landing {0} in queue", Id);
             }
         }
 
         public void TakeOff() {
             var takeoff = planes.FindAll(p => p.IsTakeoff);
             foreach (var plane in takeoff) {
-                plane.Notify("takeoff in queue");
+                plane.Notify("takeoff {0} in queue", Id);
             }
         }
 

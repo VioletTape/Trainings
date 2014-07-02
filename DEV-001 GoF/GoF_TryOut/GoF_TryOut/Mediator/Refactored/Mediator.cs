@@ -1,116 +1,65 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace GoF_TryOut.Mediator.Refactored {
     public class Mediator {
         private readonly List<Plane> planes = new List<Plane>();
+        private readonly FlightDispatcher dispatcher = new FlightDispatcher();
 
         public void Register(Plane plane) {
             planes.Add(plane);
+            plane.SetMediator(this);
         }
 
         public void MoveToFirstEchelon(Plane plane) {
-            var firstEchelon = planes.FindAll(p => p.Echelon == Echelon.First);
-            if (firstEchelon.Count <= 5) {
-                foreach (var p in firstEchelon) {
-                    p.Notify("new plane in echelon");
-                }
-                plane.Echelon = Echelon.First;
-            }
-            else {
-                plane.RemainPosition();
-            }
-        }
-    }
-
-    public class FlightDispatcher {
-        public void MoveToFirstEchelon() {
-            
-        }
-
-        public void MoveToSecondEchelon() {
-            
-        }
-        
-    }
-
-    public class Plane {
-        private Mediator mediator;
-
-        public Echelon Echelon;
-
-        public bool IsLanding;
-        public bool IsTakeoff;
-        public string Id { get; set; }
-
-        public void Notify(string message) {}
-
-
-        public void MoveToFirstEchelon() {
-            if (Echelon == Echelon.First) {
-                return;
-            }
-
-            mediator.MoveToFirstEchelon(this);
-        }
-
-        public void MoveToSecondEchelon() {
-            if (Echelon == Echelon.Second) {
-                return;
-            }
-
-            var firstEchelon = planes.FindAll(p => p.Echelon == Echelon.Second);
-            if (firstEchelon.Count <= 5) {
-                Echelon = Echelon.Second;
-                foreach (var plane in firstEchelon) {
-                    plane.Notify("new plane in echelon");
-                }
+            var echelon = planes.FindAll(p => p.Echelon == Echelon.First);
+            dispatcher.MoveToFirstEchelon(echelon, plane);
+            foreach (var p in echelon) {
+                p.Notify("new plane {0} in echelon", plane.Id);
             }
         }
 
-        public void MoveToThirdEchelon() {
-            if (Echelon == Echelon.Third) {
-                return;
-            }
-
-            var firstEchelon = planes.FindAll(p => p.Echelon == Echelon.Third);
-            if (firstEchelon.Count <= 5) {
-                Echelon = Echelon.Third;
-                foreach (var plane in firstEchelon) {
-                    plane.Notify("new plane in echelon");
-                }
+        public void MoveToSecondEchelon(Plane plane) {
+            var echelon = planes.FindAll(p => p.Echelon == Echelon.Second);
+            dispatcher.MoveToSecondEchelon(echelon, plane);
+            foreach (var p in echelon) {
+                p.Notify("new plane {0} in echelon", plane.Id);
             }
         }
 
-        public void Landing(bool isEmergency = false) {
+        public void MoveToThirdEchelon(Plane plane) {
+            var echelon = planes.FindAll(p => p.Echelon == Echelon.Third);
+            dispatcher.MoveToThirdEchelon(echelon, plane);
+            foreach (var p in echelon) {
+                p.Notify("new plane {0} in echelon", plane.Id);
+            }
+        }
+
+        public void Landing(Plane plane, bool isEmergency) {
             var landing = planes.FindAll(p => p.IsLanding);
             var takeoff = planes.FindAll(p => p.IsTakeoff);
 
             if (isEmergency) {
-                foreach (var plane in landing) {
-                    plane.MoveToThirdEchelon();
+                foreach (var p in landing) {
+                    p.MoveToFirstEchelon();
                 }
-                foreach (var plane in takeoff) {
-                    plane.RemainPosition();
+                foreach (var p in takeoff) {
+                    p.RemainPosition();
                 }
                 return;
             }
 
-            foreach (var plane in landing) {
-                plane.Notify("landing in queue");
+            foreach (var p in landing) {
+                p.Notify("landing {0} in queue", plane.Id);
             }
+
+            dispatcher.Landing(plane);
         }
 
-        public void TakeOff() {
+        public void Takeoff(Plane plane) {
             var takeoff = planes.FindAll(p => p.IsTakeoff);
             foreach (var plane in takeoff) {
-                plane.Notify("takeoff in queue");
+                plane.Notify("takeoff {0} in queue", plane.Id);
             }
         }
-
-        public void RemainPosition() {}
-
-        public void FindNearbyPlanes(Area area) {
-            planes = area.Planes.Where(p => p.Id.Contains("0")).ToList();
-        }
     }
+}

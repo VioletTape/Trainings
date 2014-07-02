@@ -133,7 +133,9 @@
     <Compile Include="Interpreter\StraightCode\Repository.cs" />
     <Compile Include="Mediator\Refactored\Area.cs" />
     <Compile Include="Mediator\Refactored\Client.cs" />
+    <Compile Include="Mediator\Refactored\FlightDispatcher.cs" />
     <Compile Include="Mediator\Refactored\Mediator.cs" />
+    <Compile Include="Mediator\Refactored\Plane.cs" />
     <Compile Include="Mediator\Straight\Area.cs" />
     <Compile Include="Mediator\Straight\Client%28obsolete%29.cs" />
     <Compile Include="Mediator\Straight\Client.cs" />

@@ -5,7 +5,7 @@ namespace GoF_TryOut.Mediator.Refactored {
     public class Area {
         public List<Plane> Planes = new List<Plane>();
 
-        public Area() {
+        public Area(Mediator mediator) {
             Planes.Add(new Plane {Id = "RA-122"});
             Planes.Add(new Plane {Id = "RA-222"});
             Planes.Add(new Plane {Id = "RA-319"});
@@ -16,6 +16,11 @@ namespace GoF_TryOut.Mediator.Refactored {
             Planes.Add(new Plane {Id = "RR-012"});
             Planes.Add(new Plane {Id = "RR-018"});
             Planes.Add(new Plane {Id = "RR-059"});
+
+
+            foreach (var plane in Planes) {
+                mediator.Register(plane);    
+            }
         }
     }
 }
