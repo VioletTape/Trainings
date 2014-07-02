@@ -2,4 +2,11 @@
     public class Client {
          
     }
+
+    public enum Echelon
+    {
+        First,
+        Second,
+        Third
+    }
 }
