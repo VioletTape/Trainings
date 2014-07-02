@@ -57,8 +57,8 @@ namespace GoF_TryOut.Mediator.Refactored {
 
         public void Takeoff(Plane plane) {
             var takeoff = planes.FindAll(p => p.IsTakeoff);
-            foreach (var plane in takeoff) {
-                plane.Notify("takeoff {0} in queue", plane.Id);
+            foreach (var p in takeoff) {
+                p.Notify("takeoff {0} in queue", plane.Id);
             }
         }
     }
