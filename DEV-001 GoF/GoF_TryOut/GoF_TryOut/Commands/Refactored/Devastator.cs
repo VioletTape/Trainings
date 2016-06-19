@@ -42,25 +42,11 @@ namespace GoF_TryOut.Commands.Refactored {
         public AttachChainSawCommand() : base(d => d.AttackChainsaw()) {}
     }
 
-     public class BoostCommand : Command<Devastator> {
+    public class BoostCommand : Command<Devastator> {
         public BoostCommand() : base(d => d.Boost()) {}
     }
 
     public class FlipUpCommand : Command<Devastator> {
         public FlipUpCommand() : base(d => d.FlipUp()) {}
     }
-
-//    public class BoostCommand : ICommand {
-//        public void Execute(object item) {
-//            var methodInfo = typeof (Devastator).GetMethod("Boost");
-//            methodInfo.Invoke(item, new object[]{});
-//        }
-//    }
-//
-//    public class FlipUpCommand : ICommand {
-//        public void Execute(object item) {
-//            var methodInfo = typeof (Devastator).GetMethod("FlipUp");
-//            methodInfo.Invoke(item, new object[]{});
-//        }
-//    }
 }

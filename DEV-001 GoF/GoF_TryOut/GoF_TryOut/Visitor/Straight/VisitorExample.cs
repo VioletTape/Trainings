@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace GoF_TryOut.Visitor.Straight
-{
+namespace GoF_TryOut.Visitor.Straight {
     public class VisitorExample {
         public VisitorExample() {
             var car = CreateCar();
@@ -10,15 +9,15 @@ namespace GoF_TryOut.Visitor.Straight
 
             var body = car.Parts.OfType<Body>().Single();
             var colorTypes = body.Parts.OfType<ColorType>().Single();
-            // можно все забыть.. 
+            // you can miss or forget something.. 
             body.Price *= 1.2m;
-            colorTypes.Price *= 1.2m; 
+            colorTypes.Price *= 1.2m;
 
             Console.WriteLine(fullPrice);
         }
 
         private Car CreateCar() {
-            var car = new Car{Price = 1};
+            var car = new Car {Price = 1};
             var body = new Body {Price = 1};
             body.Add(new ColorType {Price = 1});
             var salon = new Salon {Price = 1};
@@ -26,7 +25,7 @@ namespace GoF_TryOut.Visitor.Straight
             var audio = new Audio {Price = 1};
             audio.Add(new Reciever {Price = 1});
             audio.Add(new Speakers {Price = 1});
-           
+
             cockpit.Add(audio);
             salon.Add(cockpit);
             body.Add(salon);

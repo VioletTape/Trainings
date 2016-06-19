@@ -33,7 +33,7 @@ namespace GoF_TryOut.Memento.StraightCode {
         }
 
         public void Commit(Contact contact) {
-            for (var i = editIndex[contact.Guid]; i < editingContacts[contact.Guid].Count-1; i++) {
+            for (var i = editIndex[contact.Guid]; i < editingContacts[contact.Guid].Count - 1; i++) {
                 editingContacts[contact.Guid].RemoveAt(i);
             }
 

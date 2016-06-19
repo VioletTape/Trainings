@@ -10,7 +10,7 @@ namespace GoF_TryOut.Builder.Straight {
         }
 
         private Car CreateCar() {
-            var car1 = new Car{Price = 1};
+            var car1 = new Car {Price = 1};
             var body = new Body {Price = 1};
             body.Add(new ColorType {Price = 1});
             var salon = new Salon {Price = 1};
@@ -18,7 +18,7 @@ namespace GoF_TryOut.Builder.Straight {
             var carPart = new Audio {Price = 1};
             carPart.Add(new Reciever {Price = 1});
             carPart.Add(new Speakers {Price = 1});
-           
+
             cockpit.Add(carPart);
             salon.Add(cockpit);
             body.Add(salon);

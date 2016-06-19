@@ -48,6 +48,7 @@ namespace GoF_TryOut.AbstractFactory.StraightCode {
         public int Attack { get; set; }
         public Player Player { get; private set; }
         public Point Point { get; set; }
+
         public void Draw() {
             var format = string.Format("{0} {1} {2}", Player.Race, Point.X, Point.Y);
             Console.WriteLine(format);

@@ -75,11 +75,9 @@
         private readonly decimal multiplier;
 
         public UpdatePriceVisitor(decimal multiplier) {
-            this.multiplier = multiplier;
         }
 
         public void Visit(Car car) {
-            car.Price *= multiplier;
         }
 
         public void Visit(Body body) {
@@ -103,15 +101,12 @@
         }
 
         public void Visit(Speakers speakers) {
-            speakers.Price *= multiplier;
         }
 
         public void Visit(Wheel wheel) {
-            wheel.Price *= multiplier;
         }
 
         public void Visit(Engine engine) {
-            engine.Price *= multiplier;
         }
 
         public void Visit(ColorType colorType) {

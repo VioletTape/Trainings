@@ -1,11 +1,12 @@
 ﻿using System;
 
 namespace GoF_TryOut.Memento.StraightCode {
-    public class Contact  {
+    public class Contact {
         private Guid guid = Guid.NewGuid();
 
         public Guid Guid {
-            get { return guid; } set { guid = value; }
+            get { return guid; }
+            set { guid = value; }
         }
 
         public Type ContactType { get; private set; }
@@ -51,14 +52,14 @@ namespace GoF_TryOut.Memento.StraightCode {
 
         public Contact Clone() {
             return new Contact(ContactType) {
-                Guid = guid,
-                CellNumber = CellNumber,
-                ContactType = ContactType,
-                HomeNumber = HomeNumber,
-                LastName = LastName,
-                Name = Name,
-                Note = Note
-            };
+                                                Guid = guid,
+                                                CellNumber = CellNumber,
+                                                ContactType = ContactType,
+                                                HomeNumber = HomeNumber,
+                                                LastName = LastName,
+                                                Name = Name,
+                                                Note = Note
+                                            };
         }
     }
 }

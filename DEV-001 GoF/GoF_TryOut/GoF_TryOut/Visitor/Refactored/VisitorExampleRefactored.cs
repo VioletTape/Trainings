@@ -1,7 +1,6 @@
 ﻿using System;
 
-namespace GoF_TryOut.Visitor.Refactored
-{
+namespace GoF_TryOut.Visitor.Refactored {
     public class VisitorExampleRefactored {
         public VisitorExampleRefactored() {
             var car = CreateCar();
@@ -9,7 +8,7 @@ namespace GoF_TryOut.Visitor.Refactored
 
             var sumVisitor = new SummarizeCostVisitor();
             car.Accept(sumVisitor);
-            
+
             var updatePriceVisitor = new UpdatePriceVisitor(1.5m);
             car.Accept(updatePriceVisitor);
 
@@ -22,7 +21,7 @@ namespace GoF_TryOut.Visitor.Refactored
         }
 
         private Car CreateCar() {
-            var car1 = new Car{Price = 1};
+            var car1 = new Car {Price = 1};
             var body = new Body {Price = 1};
             body.Add(new ColorType {Price = 1});
             var salon = new Salon {Price = 1};
@@ -30,7 +29,7 @@ namespace GoF_TryOut.Visitor.Refactored
             var carPart = new Audio {Price = 1};
             carPart.Add(new Reciever {Price = 1});
             carPart.Add(new Speakers {Price = 1});
-           
+
             cockpit.Add(carPart);
             salon.Add(cockpit);
             body.Add(salon);

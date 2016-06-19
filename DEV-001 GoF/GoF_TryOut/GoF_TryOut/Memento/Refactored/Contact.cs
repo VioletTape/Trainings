@@ -1,11 +1,11 @@
 ﻿using System;
 
 namespace GoF_TryOut.Memento.Refactored {
-    public class Contact  {
+    public class Contact {
         private Guid guid = Guid.NewGuid();
 
         public Guid Guid {
-            get { return guid; } 
+            get { return guid; }
         }
 
         public Type ContactType { get; private set; }
@@ -51,14 +51,14 @@ namespace GoF_TryOut.Memento.Refactored {
 
         public ContactMemento GetMemento() {
             return new ContactMemento {
-                Guid = guid,
-                ContactType = ContactType,
-                Name = Name,
-                LastName = LastName,
-                CellNumber = CellNumber,
-                HomeNumber = HomeNumber,
-                Note = Note
-            };
+                                          Guid = guid,
+                                          ContactType = ContactType,
+                                          Name = Name,
+                                          LastName = LastName,
+                                          CellNumber = CellNumber,
+                                          HomeNumber = HomeNumber,
+                                          Note = Note
+                                      };
         }
 
         public void SetMemento(ContactMemento memento) {
@@ -68,7 +68,6 @@ namespace GoF_TryOut.Memento.Refactored {
             LastName = memento.LastName;
             CellNumber = memento.CellNumber;
             HomeNumber = memento.HomeNumber;
-
         }
 
         public class ContactMemento {

@@ -50,6 +50,8 @@ namespace GoF_TryOut.Visitor.Refactored {
             visitor.Visit(this);
             CarParts.ForEach(i => i.Accept(visitor));
         }
+
+
     }
 
     public class Body : CompositeNode {

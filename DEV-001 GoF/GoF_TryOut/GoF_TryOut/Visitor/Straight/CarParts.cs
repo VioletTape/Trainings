@@ -12,10 +12,8 @@ namespace GoF_TryOut.Visitor.Straight {
         private readonly List<ICarPart> carParts;
 
         public ReadOnlyCollection<ICarPart> Parts {
-            get {
-                return carParts.AsReadOnly();
-            }
-        } 
+            get { return carParts.AsReadOnly(); }
+        }
 
         protected CompositeNode() {
             carParts = new List<ICarPart>();

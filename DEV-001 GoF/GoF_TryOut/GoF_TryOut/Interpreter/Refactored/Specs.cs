@@ -44,7 +44,7 @@ namespace GoF_TryOut.Interpreter.Refactored {
         }
 
         public TSpecification ExtractSupersetSpecification<TSpecification>() {
-            return (TSpecification) (object) ExtractSupersetSpecification(typeof (TSpecification));
+            return (TSpecification) (object) ExtractSupersetSpecification(typeof(TSpecification));
         }
 
         private Specification<T> ExtractSupersetSpecification(Type specificationType) {

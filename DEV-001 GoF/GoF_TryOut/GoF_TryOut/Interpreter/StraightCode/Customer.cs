@@ -24,19 +24,18 @@ namespace GoF_TryOut.Interpreter.StraightCode {
         }
 
         public List<Customer> GetCustomersFrom(string country) {
-           return repository.GetCustomers()
-                      .Where(c => c.Country == country)
-                      .Select(c => c)
-                      .ToList();
+            return repository.GetCustomers()
+                             .Where(c => c.Country == country)
+                             .Select(c => c)
+                             .ToList();
         }
 
         public List<Customer> GetCustomersFromAndNameStartingFrom(string country, string nameFrom) {
             return repository.GetCustomers()
-                      .Where(c => c.Country == country && c.Name.StartsWith(nameFrom))
-                      .Select(c => c)
-                      .ToList();
-        } 
-        
+                             .Where(c => c.Country == country && c.Name.StartsWith(nameFrom))
+                             .Select(c => c)
+                             .ToList();
+        }
     }
 
     public class ClientForm {
@@ -53,7 +52,6 @@ namespace GoF_TryOut.Interpreter.StraightCode {
             foreach (var customer in res2) {
                 Console.WriteLine(customer.Name + " " + customer.Country);
             }
-
         }
     }
 }

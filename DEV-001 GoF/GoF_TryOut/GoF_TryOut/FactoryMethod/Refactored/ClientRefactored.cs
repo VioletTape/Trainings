@@ -2,31 +2,18 @@
     public class Client {
         public void Do() {
             var factory = new NodeFactory();
-            factory.StringNodeDecode = true;
-            factory.RemoveEscapeCharacters = true;
 
-            var parser = new Parser(factory);
+
+            var parser = new Parser(factory) {
+                                                 StringNodeDecode = true,
+                                                 RemoveEscapeCharacters = true
+                                             };
             var result = parser.Parse("lalala");
         }
     }
 
-    /// <summary>
-    /// В данном случае реализация ближе к классической фабрике
-    /// т.к. есть дополнительная ответственность на классе
-    /// </summary>
-    internal class NodeFactory : INodeFactory {
-        public bool StringNodeDecode { get; set; }
-        public bool RemoveEscapeCharacters { get; set; }
-
+    internal class NodeFactory {
         public Node Create(string url) {
-            if (RemoveEscapeCharacters) {
-                url = url.Replace("\t", "");
-            }
-
-            if (StringNodeDecode) {
-                url = url.ToUpper();
-            }
-
             if (url.StartsWith("c:")) {
                 return new CompanyNode();
             }
@@ -41,9 +28,12 @@
     }
 
     internal class Parser {
-        private readonly INodeFactory factory;
+        private readonly NodeFactory factory;
 
-        public Parser(INodeFactory factory) {
+        public bool StringNodeDecode { get; set; }
+        public bool RemoveEscapeCharacters { get; set; }
+
+        public Parser(NodeFactory factory) {
             this.factory = factory;
         }
 
@@ -51,6 +41,13 @@
             var stringParser = new StringParser(url);
             url = stringParser.FindString();
 
+            if (RemoveEscapeCharacters) {
+                url = url.Replace("\t", "");
+            }
+
+            if (StringNodeDecode) {
+                url = url.ToUpper();
+            }
             return factory.Create(url);
         }
     }
@@ -64,7 +61,7 @@
 
         public string FindString() {
             return url;
-        }   
+        }
     }
 
     internal abstract class Node {

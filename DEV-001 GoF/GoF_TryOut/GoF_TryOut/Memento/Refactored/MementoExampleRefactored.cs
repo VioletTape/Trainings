@@ -46,8 +46,6 @@ namespace GoF_TryOut.Memento.Refactored {
 
             service.Redo(editingContact);
             Print(editingContact);
-
-            
         }
 
         private void Print(Contact contact) {

@@ -54,32 +54,32 @@ namespace GoF_TryOut.AbstractFactory.Refactored {
         void Draw();
     }
 
-    // Factory
+    // Factory method
     public class Infantry<T> : IInfantry where T : IRace {
         private static Dictionary<Type, IInfantry> prototypes
             = new Dictionary<Type, IInfantry> {
-                {
-                    typeof (Human), new Infantry<Human> {
-                        Armor = 10,
-                        HP = 20,
-                        Attack = 5
+                  {
+                      typeof(Human), new Infantry<Human> {
+                                                             Armor = 10,
+                                                             HP = 20,
+                                                             Attack = 5
+                                                         }
+                  }
+                  , {
+                        typeof(Zerg), new Infantry<Zerg> {
+                                                             Armor = 5,
+                                                             HP = 25,
+                                                             Attack = 10
+                                                         }
                     }
-                }
-                , {
-                    typeof (Zerg), new Infantry<Zerg> {
-                        Armor = 5,
-                        HP = 25,
-                        Attack = 10
-                    }
-                }
-                , {
-                    typeof (Protos), new Infantry<Protos> {
-                        Armor = 25,
-                        HP = 5,
-                        Attack = 15
-                    }
-                },
-            };
+                  , {
+                        typeof(Protos), new Infantry<Protos> {
+                                                                 Armor = 25,
+                                                                 HP = 5,
+                                                                 Attack = 15
+                                                             }
+                    },
+                                              };
 
         public int Armor { get; set; }
         public int HP { get; set; }
@@ -94,7 +94,7 @@ namespace GoF_TryOut.AbstractFactory.Refactored {
         }
 
         public static IInfantry CreateFor(Player player) {
-            var infantry = Mapper.Map<Infantry<T>>(prototypes[typeof (T)]);
+            var infantry = Mapper.Map<Infantry<T>>(prototypes[typeof(T)]);
             infantry.Player = player;
             return infantry;
         }
@@ -103,12 +103,25 @@ namespace GoF_TryOut.AbstractFactory.Refactored {
             var format = string.Format("{0} {1} {2}", Player.Race, Point.X, Point.Y);
             Console.WriteLine(format);
         }
+
+
     }
 
     // Abstract Factory
     public class Factory<T> where T : IRace {
         public IInfantry CreateInfantry(Player player) {
-            return  Infantry<T>.CreateFor(player);
+            return Infantry<T>.CreateFor(player);
         }
+
+       
+
+
+    }
+
+
+
+    public enum HumanSpecial {
+        Sniper,
+        Spy
     }
 }

@@ -70,37 +70,37 @@ namespace GoF_TryOut.AbstractFactory.Flyweight {
     public class InfantryFactory {
         private static readonly Dictionary<RaceType, InfantryBase> prototypes
             = new Dictionary<RaceType, InfantryBase> {
-                {
-                    RaceType.Human, new InfantryBase {
-                        Armor = 10,
-                        HP = 20,
-                        Attack = 5,
-                        Image = "human big image"
-                    }
-                }
-                , {
-                    RaceType.Zerg, new InfantryBase {
-                        Armor = 5,
-                        HP = 25,
-                        Attack = 10,
-                        Image = "Zerg big image"
-                    }
-                }
-                , {
-                    RaceType.Protos, new InfantryBase {
-                        Armor = 25,
-                        HP = 5,
-                        Attack = 15,
-                        Image = "Protos big image"
-                    }
-                },
-            };
+         {
+             RaceType.Human, new InfantryBase {
+                                                  Armor = 10,
+                                                  HP = 20,
+                                                  Attack = 5,
+                                                  Image = "human big image"
+                                              }
+         }
+         , {
+               RaceType.Zerg, new InfantryBase {
+                                                   Armor = 5,
+                                                   HP = 25,
+                                                   Attack = 10,
+                                                   Image = "Zerg big image"
+                                               }
+           }
+         , {
+               RaceType.Protos, new InfantryBase {
+                                                     Armor = 25,
+                                                     HP = 5,
+                                                     Attack = 15,
+                                                     Image = "Protos big image"
+                                                 }
+           },
+                                                     };
 
 
         public Infantry<T> Create<T>(Player player) {
             var infantry = new Infantry<T>(player) {
-                InfantryBase = prototypes[player.Race.RaceType]
-            };
+                          InfantryBase = prototypes[player.Race.RaceType]
+                                                   };
 
             return infantry;
         }

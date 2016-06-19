@@ -3,7 +3,7 @@
         private readonly Car car;
 
         public CarBuilder(decimal price) {
-            car = new Car{Price =  price};
+            car = new Car {Price = price};
         }
 
         public BodyBuilder AddBody(decimal price) {
@@ -52,9 +52,9 @@
 
             public CarBuilder Build() {
                 for (int i = 0; i < wheelCount; i++) {
-                    var wheel = new Wheel{Price = price};
-                    wheel.Add(new Disc{Price = diskPrice});
-                    wheel.Add(new Tire{Price = tirePrice});
+                    var wheel = new Wheel {Price = price};
+                    wheel.Add(new Disc {Price = diskPrice});
+                    wheel.Add(new Tire {Price = tirePrice});
                     car.Add(wheel);
                 }
 
@@ -108,11 +108,11 @@
                 this.carBuilder = carBuilder;
                 this.car = car;
 
-                engine = new Engine{Price = price};
+                engine = new Engine {Price = price};
             }
 
             public EngineBuilder WithTurbo(decimal price) {
-                engine.Add(new Turbo{Price = 1});
+                engine.Add(new Turbo {Price = 1});
                 return this;
             }
 

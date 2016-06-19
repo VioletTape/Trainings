@@ -7,6 +7,7 @@ namespace GoF_TryOut.Composite.Refactored {
         decimal GetFullPrice();
     }
 
+
     public abstract class CompositeNode : ICarPart {
         private readonly List<ICarPart> carParts;
 
@@ -38,6 +39,10 @@ namespace GoF_TryOut.Composite.Refactored {
             return Price;
         }
     }
+
+
+
+
 
     public class Car : CompositeNode {}
 

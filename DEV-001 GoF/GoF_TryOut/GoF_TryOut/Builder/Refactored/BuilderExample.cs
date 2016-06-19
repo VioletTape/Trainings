@@ -11,7 +11,7 @@ namespace GoF_TryOut.Builder.Refactored {
         }
 
         private Car CreateCar() {
-            var car1 = new Car{Price = 1};
+            var car1 = new Car {Price = 1};
             var body = new Body {Price = 1};
             body.Add(new ColorType {Price = 1});
             var salon = new Salon {Price = 1};
@@ -19,7 +19,7 @@ namespace GoF_TryOut.Builder.Refactored {
             var carPart = new Audio {Price = 1};
             carPart.Add(new Reciever {Price = 1});
             carPart.Add(new Speakers {Price = 1});
-           
+
             cockpit.Add(carPart);
             salon.Add(cockpit);
             body.Add(salon);
@@ -54,19 +54,26 @@ namespace GoF_TryOut.Builder.Refactored {
         }
 
         private Car CreateCarByBuilder() {
+
+
             return new CarBuilder(1)
-            .AddBody(1)
-                .WithColor(1)
-                .WithSalon(1,1,1)
-                .Build()
-            .AddEngine(1)
-                .WithTurbo(1)
-                .Build()
-            .AddWheels(4,1)
-                .WithDisk(1)
-                .WithTire(1)
-                .Build()
-            .Build();
+                .AddBody(1)
+                   .WithColor(1)
+                   .WithColor(1)
+                   .WithColor(1)
+                   .WithSalon(1, 1, 1)
+                   .Build()
+                .AddEngine(1)
+                   .WithTurbo(1)
+                   .WithTurbo(1)
+                   .WithTurbo(1)
+                   .WithTurbo(1)
+                   .Build()
+                .AddWheels(4, 1)
+                  .WithDisk(1)
+                  .WithTire(1)
+                  .Build()
+                .Build();
         }
     }
 }

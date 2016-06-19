@@ -6,10 +6,10 @@ namespace GoF_TryOut.Strategy.Refactored {
 
         public ShippingInfo() {
             ShippingCalculations = new Dictionary<State, IShippingCalculation> {
-                {State.Alaska, new AlaskShippingCalculation()},
-                {State.NewYork, new NewYorkShippingCalculation()},
-                {State.Florida, new FloridaShippingCalculation()}
-            };
+                                                                                   {State.Alaska, new AlaskShippingCalculation()},
+                                                                                   {State.NewYork, new NewYorkShippingCalculation()},
+                                                                                   {State.Florida, new FloridaShippingCalculation()}
+                                                                               };
         }
 
         public decimal CalculateShippingAmount(State shipToState) {

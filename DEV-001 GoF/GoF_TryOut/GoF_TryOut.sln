@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.20617.1 PREVIEW
+# Visual Studio 15
+VisualStudioVersion = 15.0.25302.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF_TryOut", "GoF_TryOut\GoF_TryOut.csproj", "{2AA897C2-B383-497B-8CF3-26FB8531D48A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{2617A669-26E7-4F5A-93AF-8DA8DA1A6B6F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{720CCD40-8915-4CEC-8D21-004D8A3481AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9751947C-6477-46F7-A282-2FAA49E8CABA}"
 	ProjectSection(SolutionItems) = preProject
@@ -30,12 +28,12 @@ Global
 		{2617A669-26E7-4F5A-93AF-8DA8DA1A6B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2617A669-26E7-4F5A-93AF-8DA8DA1A6B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2617A669-26E7-4F5A-93AF-8DA8DA1A6B6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{720CCD40-8915-4CEC-8D21-004D8A3481AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{720CCD40-8915-4CEC-8D21-004D8A3481AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{720CCD40-8915-4CEC-8D21-004D8A3481AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{720CCD40-8915-4CEC-8D21-004D8A3481AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

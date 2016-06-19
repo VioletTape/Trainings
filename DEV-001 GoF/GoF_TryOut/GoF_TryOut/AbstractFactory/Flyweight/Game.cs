@@ -12,6 +12,7 @@ namespace GoF_TryOut.AbstractFactory.Flyweight {
             var factoryProtos = new Factory<Protos>();
 
 
+
             var infantry = factoryHuman.CreateInfantry(playerA);
             infantry.Point = new Point(1, 1);
 
@@ -22,7 +23,7 @@ namespace GoF_TryOut.AbstractFactory.Flyweight {
             infantry2.Point = new Point(2, 2);
 
             var infantry3 = factoryProtos.CreateInfantry(playerC);
-            
+
 
             infantry.Draw();
             infantry1.Draw();
