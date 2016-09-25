@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Warehouse" Class="WarehouseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\lcf;Initial Catalog=Warehouse;Integrated Security=True" SettingsObjectName="Infrastructure.Properties.Settings" SettingsPropertyName="WarehouseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customer" Member="customers">
+    <Type Name="customer">
+      <Column Name="CustomerId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Customer_Invoice" Member="invoices" ThisKey="CustomerId" OtherKey="CustomerId" Type="invoice" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ware" Member="wares">
+    <Type Name="ware">
+      <Column Name="WareId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Association Name="Ware_InvoceContent" Member="invoceContents" ThisKey="WareId" OtherKey="WareId" Type="invoceContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InvoceContent" Member="invoceContents">
+    <Type Name="invoceContent">
+      <Column Name="InvoiceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WareId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Association Name="Ware_InvoceContent" Member="ware" ThisKey="WareId" OtherKey="WareId" Type="ware" IsForeignKey="true" />
+      <Association Name="Invoice_InvoceContent" Member="invoice" ThisKey="InvoiceId" OtherKey="InvoiceId" Type="invoice" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Invoice" Member="invoices">
+    <Type Name="invoice">
+      <Column Name="InvoiceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IsShiped" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Invoice_InvoceContent" Member="invoceContents" ThisKey="InvoiceId" OtherKey="InvoiceId" Type="invoceContent" />
+      <Association Name="Customer_Invoice" Member="customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

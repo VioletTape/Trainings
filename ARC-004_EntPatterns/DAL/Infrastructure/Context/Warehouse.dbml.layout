@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Warehouse">
+  <DataContextMoniker Name="/WarehouseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8e7542bd-56ea-49de-8cce-fce8f71c8b88" absoluteBounds="0.75, 1, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/WarehouseDataContext/customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6fdcb442-f787-4eb5-bc86-436da09cfc4e" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7ca2f29-f741-49c6-bb69-3e6045456959" absoluteBounds="3.125, 1, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/WarehouseDataContext/ware" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1f66d6c-9ed8-427b-b4fc-0aec93beaff5" absoluteBounds="3.1400000000000006, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dccbbd0d-86c9-451b-ab50-f470ed0d685b" absoluteBounds="3.25, 3, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/WarehouseDataContext/invoceContent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51160b9a-77ac-4e36-9104-6d1c54a2f994" absoluteBounds="3.2649999999999997, 3.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2f3738e-bb66-4c2f-b984-10fd53b7d92f" absoluteBounds="0.75, 3, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/WarehouseDataContext/invoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69ebb842-b6a6-41e5-8774-c2d2a760a720" absoluteBounds="0.76500000000000012, 3.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.1875 : 2.3862939453125); (4.1875 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WarehouseDataContext/ware/Ware_InvoceContent" />
+      <nodes>
+        <classShapeMoniker Id="b7ca2f29-f741-49c6-bb69-3e6045456959" />
+        <classShapeMoniker Id="dccbbd0d-86c9-451b-ab50-f470ed0d685b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.88544840494792); (3.25 : 3.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WarehouseDataContext/invoice/Invoice_InvoceContent" />
+      <nodes>
+        <classShapeMoniker Id="d2f3738e-bb66-4c2f-b984-10fd53b7d92f" />
+        <classShapeMoniker Id="dccbbd0d-86c9-451b-ab50-f470ed0d685b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.7187475 : 2.57859537760417); (1.7187475 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WarehouseDataContext/customer/Customer_Invoice" />
+      <nodes>
+        <classShapeMoniker Id="8e7542bd-56ea-49de-8cce-fce8f71c8b88" />
+        <classShapeMoniker Id="d2f3738e-bb66-4c2f-b984-10fd53b7d92f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
