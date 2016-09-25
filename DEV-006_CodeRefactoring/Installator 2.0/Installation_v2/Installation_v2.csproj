@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB16A89F-30EB-4D07-A45A-850F6A671B4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Installation_v2</RootNamespace>
+    <AssemblyName>Installation_v2</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>install.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CabLib, Version=10.1.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\CabLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.IWshRuntimeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Interop.IWshRuntimeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InstallationLogic\ApplicationContext.cs" />
+    <Compile Include="InstallationLogic\Enums\InstallFileAccess.cs" />
+    <Compile Include="InstallationLogic\Enums\FileAction.cs" />
+    <Compile Include="InstallationLogic\Enums\InstallationType.cs" />
+    <Compile Include="InstallationLogic\Enums\InstallReqType.cs" />
+    <Compile Include="InstallationLogic\Enums\RequirementState.cs" />
+    <Compile Include="InstallationLogic\Enums\RequirementType.cs" />
+    <Compile Include="InstallationLogic\Enums\OperationResult.cs" />
+    <Compile Include="InstallationLogic\Enums\Result.cs" />
+    <Compile Include="InstallationLogic\Enums\SystemType.cs" />
+    <Compile Include="InstallationLogic\Enums\SystemVersion.cs" />
+    <Compile Include="InstallationLogic\InstallReq.cs" />
+    <Compile Include="InstallationLogic\Interfaces\ILogService.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IRegistryService.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IRequirementManager.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IServiceLocator.cs" />
+    <Compile Include="InstallationLogic\Services\BaseService.cs" />
+    <Compile Include="InstallationLogic\Services\FileService.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IFileService.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IInstallEnvironment.cs" />
+    <Compile Include="InstallationLogic\InstallEnvironment.cs" />
+    <Compile Include="InstallationLogic\InstallState.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IRequirementService.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IService.cs" />
+    <Compile Include="InstallationLogic\Requirement.cs" />
+    <Compile Include="InstallationLogic\RequirementManager.cs" />
+    <Compile Include="InstallationLogic\Interfaces\IInstallService.cs" />
+    <Compile Include="InstallationLogic\Services\InstallService.cs" />
+    <Compile Include="InstallationLogic\Interfaces\ISqlUpdateService.cs" />
+    <Compile Include="InstallationLogic\Services\LogService.cs" />
+    <Compile Include="InstallationLogic\Services\RegistryService.cs" />
+    <Compile Include="InstallationLogic\Services\RequirementService.cs" />
+    <Compile Include="InstallationLogic\ServiceLocator.cs" />
+    <Compile Include="InstallationLogic\Services\SqlUpdateService.cs" />
+    <Compile Include="InstallationLogic\Specifications\AppliedToAnySystem.cs" />
+    <Compile Include="InstallationLogic\Specifications\AppliedToSystemVersion.cs" />
+    <Compile Include="InstallationLogic\Specifications\ISpecification.cs" />
+    <Compile Include="InstallationLogic\Specifications\PrerequirmentsNetFramework.cs" />
+    <Compile Include="InstallationLogic\Specifications\PrerequirmentsUpdateExactKB.cs" />
+    <Compile Include="InstallationLogic\Specifications\PrerequirmentsUpdateFamilyKB.cs" />
+    <Compile Include="PresentationLogic\BaseViewState.cs" />
+    <Compile Include="PresentationLogic\CreateUC\CreateUseCase.cs" />
+    <Compile Include="PresentationLogic\CreateUC\DataState\CreateViewState.cs" />
+    <Compile Include="PresentationLogic\CreateUC\Views\CreateView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\CreateUC\Views\CreateView.Designer.cs">
+      <DependentUpon>CreateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\CreateUC\Views\ICreateView.cs" />
+    <Compile Include="PresentationLogic\End\DataState\EndViewState.cs" />
+    <Compile Include="PresentationLogic\End\EndUseCase.cs" />
+    <Compile Include="PresentationLogic\End\Views\IEndView.cs" />
+    <Compile Include="PresentationLogic\End\Views\EndView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\End\Views\EndView.Designer.cs">
+      <DependentUpon>EndView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\ImageSetter.cs" />
+    <Compile Include="PresentationLogic\InstallSelectionUC\DataState\InstallSelectionViewState.cs" />
+    <Compile Include="PresentationLogic\InstallSelectionUC\InstallSelectionUseCase.cs" />
+    <Compile Include="PresentationLogic\InstallSelectionUC\Views\IInstallSelectionView.cs" />
+    <Compile Include="PresentationLogic\InstallSelectionUC\Views\InstallSelectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\InstallSelectionUC\Views\InstallSelectionView.Designer.cs">
+      <DependentUpon>InstallSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\InstallUC\DataState\InstallViewState.cs" />
+    <Compile Include="PresentationLogic\InstallUC\InstallUseCase.cs" />
+    <Compile Include="PresentationLogic\InstallUC\Views\IInstallView.cs" />
+    <Compile Include="PresentationLogic\InstallUC\Views\InstallView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\InstallUC\Views\InstallView.Designer.cs">
+      <DependentUpon>InstallView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\LicenseUC\DataState\LicenseViewState.cs" />
+    <Compile Include="PresentationLogic\LicenseUC\LicenseUseCase.cs" />
+    <Compile Include="PresentationLogic\LicenseUC\Views\ILicenseView.cs" />
+    <Compile Include="PresentationLogic\LicenseUC\Views\LicenseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\LicenseUC\Views\LicenseView.Designer.cs">
+      <DependentUpon>LicenseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\RemoveTempUC\DataState\RemoveTempViewState.cs" />
+    <Compile Include="PresentationLogic\RemoveTempUC\RemoveTempUseCase.cs" />
+    <Compile Include="PresentationLogic\RemoveTempUC\Views\IRemoveTempView.cs" />
+    <Compile Include="PresentationLogic\RemoveTempUC\Views\RemoveTempView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\RemoveTempUC\Views\RemoveTempView.Designer.cs">
+      <DependentUpon>RemoveTempView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\RequirementsCheckupUC\DataState\RequirementCheckupViewState.cs" />
+    <Compile Include="PresentationLogic\RequirementsCheckupUC\DataState\RequirementsViewState.cs" />
+    <Compile Include="PresentationLogic\RequirementsCheckupUC\RequirementsCheckupUseCase.cs" />
+    <Compile Include="PresentationLogic\RequirementsCheckupUC\Views\IRequirementCheckupView.cs" />
+    <Compile Include="PresentationLogic\RequirementsCheckupUC\Views\RequirementsCheckupView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\RequirementsCheckupUC\Views\RequirementsCheckupView.Designer.cs">
+      <DependentUpon>RequirementsCheckupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\RequirementsInstallUC\DataState\RequirementsInstallViewState.cs" />
+    <Compile Include="PresentationLogic\RequirementsInstallUC\RequirementsInstallUseCase.cs" />
+    <Compile Include="PresentationLogic\RequirementsInstallUC\Views\IRequirementsInstallView.cs" />
+    <Compile Include="PresentationLogic\RequirementsInstallUC\Views\RequirementsInstallView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\RequirementsInstallUC\Views\RequirementsInstallView.Designer.cs">
+      <DependentUpon>RequirementsInstallView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLogic\Enums\UseCaseNames.cs" />
+    <Compile Include="PresentationLogic\Enums\TrackName.cs" />
+    <Compile Include="PresentationLogic\UseCaseRunner.cs" />
+    <Compile Include="PresentationLogic\WelcomeUC\DataState\WelcomeViewState.cs" />
+    <Compile Include="PresentationLogic\UseCaseBase.cs" />
+    <Compile Include="PresentationLogic\WelcomeUC\Views\IWelcomeView.cs" />
+    <Compile Include="PresentationLogic\WelcomeUC\WelcomeUseCase.cs" />
+    <Compile Include="FormInstall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInstall.Designer.cs">
+      <DependentUpon>FormInstall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramMode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormInstall.resx">
+      <DependentUpon>FormInstall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\CreateUC\Views\CreateView.resx">
+      <DependentUpon>CreateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\End\Views\EndView.resx">
+      <DependentUpon>EndView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\InstallSelectionUC\Views\InstallSelectionView.resx">
+      <DependentUpon>InstallSelectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\InstallUC\Views\InstallView.resx">
+      <DependentUpon>InstallView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\LicenseUC\Views\LicenseView.resx">
+      <DependentUpon>LicenseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\RemoveTempUC\Views\RemoveTempView.resx">
+      <DependentUpon>RemoveTempView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\RequirementsCheckupUC\Views\RequirementsCheckupView.resx">
+      <DependentUpon>RequirementsCheckupView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\RequirementsInstallUC\Views\RequirementsInstallView.resx">
+      <DependentUpon>RequirementsInstallView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLogic\WelcomeUC\Views\WelcomeView.resx">
+      <DependentUpon>WelcomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PresentationLogic\WelcomeUC\Views\WelcomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLogic\WelcomeUC\Views\WelcomeView.Designer.cs">
+      <DependentUpon>WelcomeView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_back_start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.BaseViewState.datasource" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.End.DataState.EndViewState.datasource" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.InstallSelectionUC.DataState.InstallSelectionViewState.datasource" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.InstallUC.DataState.InstallViewState.datasource" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.LicenseUC.DataState.LicenseViewState.datasource" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.RequirementsCheckupUC.DataState.RequirementCheckupViewState.datasource" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.RequirementsInstallUC.DataState.RequirementsInstallViewState.datasource" />
+    <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_software.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kpackage32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configure_toolbars32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.RequirementsCheckupUC.DataState.RequirementsViewState.datasource" />
+    <None Include="Resources\edittrash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forbidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16-em-cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kmixdocked_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.CreateUC.DataState.CreateViewState.datasource" />
+    <None Include="Properties\DataSources\Installation_v2.PresentationLogic.RemoveTempUC.DataState.RemoveTempViewState.datasource" />
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\CabLib.dll" />
+    <Content Include="dll\Interop.IWshRuntimeLibrary.dll" />
+    <Content Include="install.ico" />
+    <EmbeddedResource Include="scripts.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="NotificationBarLib.NotificationBarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="35">
+    <Grid>
+       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition MaxWidth="500"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Some actual message, with very long text that can be wrapped to the second line inside this placement" 
+                   Margin="4,0,4,0" TextWrapping="Wrap" VerticalAlignment="Center"
+                   Name="message"/>
+
+        <StackPanel Grid.Column="1" Margin="0,-150,0,35" Name="FlowArea" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Name="IconPanel">
+<!--            <Image Height="32" Source="Icons/dotes.png" Stretch="None" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>-->
+        </StackPanel>
+    </Grid>
+</UserControl>

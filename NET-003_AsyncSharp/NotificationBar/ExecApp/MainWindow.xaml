@@ -1,0 +1,22 @@
+﻿<Window x:Class = "ExecApp.MainWindow"
+        xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:NotificationBarLib1="clr-namespace:NotificationBarLib;assembly=VioletTape.NotificationBarLib"
+        Title = "MainWindow" Height = "504" Width = "887" Initialized="WindowInitialized" >
+    <DockPanel>
+        
+        <!--        Application header               -->
+        <StackPanel Orientation = "Horizontal" DockPanel.Dock = "Top" >
+            <Label Content = "{Binding ScreenTitle, FallbackValue='Screen Title'}" FontSize = "20" />
+            
+        </StackPanel>
+
+        <!--        Notification area        -->
+        <NotificationBarLib1:NotificationBarControl DockPanel.Dock = "Bottom" Name="notificationBar" />
+        
+        <!--        Main screen area        -->
+        <StackPanel ZIndex = "-1" Name="Content" Background="White">
+            
+        </StackPanel>
+    </DockPanel>
+</Window>

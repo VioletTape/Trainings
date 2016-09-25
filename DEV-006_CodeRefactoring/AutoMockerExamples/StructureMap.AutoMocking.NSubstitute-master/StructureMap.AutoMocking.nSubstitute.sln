@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructureMap.AutoMocking.NSubstitute", "StructureMap.AutoMocking.nSubstitute\StructureMap.AutoMocking.NSubstitute.csproj", "{58ED962F-F359-4419-B231-ED84F8F364B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructureMap.AutoMocking.NSubstitute.Specs", "StructureMap.AutoMocking.NSubstitute.Specs\StructureMap.AutoMocking.NSubstitute.Specs.csproj", "{35520FDF-E7AF-446B-B601-0F28BE516C51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{699D4183-F282-4B77-9CDC-00A13122E9A0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58ED962F-F359-4419-B231-ED84F8F364B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58ED962F-F359-4419-B231-ED84F8F364B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58ED962F-F359-4419-B231-ED84F8F364B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58ED962F-F359-4419-B231-ED84F8F364B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35520FDF-E7AF-446B-B601-0F28BE516C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35520FDF-E7AF-446B-B601-0F28BE516C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35520FDF-E7AF-446B-B601-0F28BE516C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35520FDF-E7AF-446B-B601-0F28BE516C51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

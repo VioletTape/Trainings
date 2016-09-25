@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ExecApp.Views.MultipleNotificationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label>
+            <Hyperlink Command="{Binding ToTheMainScreen}">Back to the main screen</Hyperlink>
+        </Label>
+        
+        <Button Grid.Column="0" Grid.Row="1" Content="Stars" Command="{Binding CalculateStars}" Height="30"/>
+        <Button Grid.Column="0" Grid.Row="2" Content="Rain drops" Command="{Binding CalculateRains}" Height="30"/>
+        <Button Grid.Column="0" Grid.Row="3" Content="Moments" Command="{Binding CalculateMoments}" Height="30"/>
+
+        <Label Grid.Column="1" Grid.Row="1" Content="{Binding Message1}" />
+        <Label Grid.Column="1" Grid.Row="2" Content="{Binding Message2}"/>
+        <Label Grid.Column="1" Grid.Row="3" Content="{Binding Message3}"/>
+    </Grid>
+</UserControl>
